@@ -29,11 +29,6 @@ const customerRoutes = require('./routes/customer');
 app.use('/', customerRoutes);
 app.use('/admin', customerRoutes);
 
-
-
-
-
-
 // Configuracion de archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 

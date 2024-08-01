@@ -19,7 +19,51 @@ controller.list = (req, res)=>{
 
 //Creamos el metodo para agregar un nuevo servicio
 controller.save = (req, res)=>{
-    req.body
+    const data = req.body;
+    req.getConnection((err, conn)=>{
+        conn.query('insert into servicios set ?', [data], (err, rows)=>{
+            console.log(rows);
+            res.redirect('/admin');
+        });
+
+    });
+};
+
+//Creamos el metodo para editar un servicio
+controller.edit = (req,res)=>{
+    const {idServicio} = req.params;
+    req.getConnection((err, conn)=>{
+        conn.query('select * from servicios where idServicio = ?', [idServicio], (err, rows)=>{
+            console.log(rows);
+            res.render('edit', {
+                data: rows[0]
+            });
+        });
+    });
+};
+
+controller.update = (req, res)=>{
+    const {idServicio} = req.params;
+    const newCustomer = req.body;
+
+    req.getConnection((err, conn)=>{
+        conn.query('update servicios set ? where idServicio = ?',[newCustomer, idServicio], (err, rows)=>{
+            console.log(rows);
+            res.redirect('/admin');
+        });
+    });
+};
+
+
+//Creamos el metodo para elimnar un servicio
+controller.delete = (req, res)=>{
+    const {idServicio} = req.params;
+    req.getConnection((err, conn)=>{
+        conn.query('delete from servicios where idServicio = ?', [idServicio], (err, rows)=>{
+            console.log(rows);
+            res.redirect('/admin');
+        });
+    })
 };
 
 
