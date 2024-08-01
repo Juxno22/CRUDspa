@@ -1,7 +1,16 @@
 //Creamos un objeto
 const controller = {};
+
+
 //Creamos varios metodos de un mismo objeto
 
+//Mostramos el inicio
+controller.inicio = (req, res)=>{
+    res.render('index');
+};
+
+
+//Creamos el metodo para lstar los servicios
 controller.list = (req, res)=>{
     //Utilizamos el metodo para jalar la conexion creada en app.js
     req.getConnection((err, conn)=>{

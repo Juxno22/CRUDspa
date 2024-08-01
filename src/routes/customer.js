@@ -6,6 +6,7 @@ const router = express.Router();
 const customerController = require('../controllers/customerController');
 
 //Creamos las rutas que el servidor va poder iniciar
+router.get('/inicio', customerController.inicio);
 router.get('/', customerController.list);
 router.post('/add', customerController.save);
 router.get('/delete/:idServicio', customerController.delete);//agregamos a la ruta el id del registro que queremos eliminar

@@ -92,3 +92,21 @@ input{
     border-radius: 20px;
     margin: 10px;
 }
+#action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#action1{
+    background-color: rgb(240, 45, 45);
+    margin: 1px;
+    padding: 4px;
+    border-radius: 5px;
+}
+#action2{
+    background-color: rgb(33, 173, 33);
+    margin: 1px;
+    padding: 4px;
+    border-radius: 5px;
+}

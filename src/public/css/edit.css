@@ -38,6 +38,7 @@ header h1 {
 .contenido{
     margin-top: 20px;
     display: flex;
+    justify-content: center;
     flex-direction: row;;
 }
 .agregar{
@@ -46,7 +47,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     background-color: wheat;
-    width: 25%;
+    width: 40%;
     border-radius: 20px;
     margin: 10px;
 }
@@ -81,14 +82,4 @@ input{
 .agregar-boton:hover{
     background-color: white;
     border: 2px solid black;
-}
-
-.muestra{
-    display: flex;
-    background-color: white;
-    flex-direction: column;
-    width: 75%;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 10px;
 }

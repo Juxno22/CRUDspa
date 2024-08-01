@@ -13,6 +13,7 @@
             <div class="settings">
                 <a href="#">Configuracion</a>
                 <a href="#">Ayuda</a>
+                <a href="/inicio">Inicio</a>
             </div>
         </header>
         <div class="contenido">
@@ -59,12 +60,12 @@
                                     <td><%= data[i].descripcion %></td>
                                     <td><%= data[i].idUsuario %></td>
                                     <td><%= data[i].idCategoria %></td>
-                                    <td>
+                                    <td id="action">
                                         <a href="/delete/<%= data[i].idServicio %>" style="text-decoration: none;">
-                                            <button>Eliminar</button>
+                                            <button id="action1">Eliminar</button>
                                         </a>
                                         <a href="/update/<%= data[i].idServicio %>" style="text-decoration: none;">
-                                            <button>Editar</button>
+                                            <button id="action2">Editar</button>
                                         </a>
                                     </td>
                                 </tr>
