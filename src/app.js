@@ -6,15 +6,13 @@ const mysql = require('mysql');
 const myConnection = require('express-myconnection');
 const app = express();
 
-//Creamos el puerto, por si el sistema tiene uno.
-app.set('port', process.env.PORT || 3000);
-
 //configuramos el motor de plantillas ejs
-app.use('view engine', 'ejs');
-app.use('views', path.join(__dirname + 'views'));//ruta multiplataforma
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));//ruta multiplataforma
 
 //Configuracion de los middlewares. Funciones que se ejecutan antes de que vengan las peticiones de los usuarios
 app.use(morgan('dev')); //Para ver las solicitudes
+app.use(express.urlencoded({extended: false})); //metodo para entender los datos que vienen del formulario
 
 //Configuramos la conexion a la base de datos
 app.use(myConnection(mysql, {
@@ -23,12 +21,25 @@ app.use(myConnection(mysql, {
     password: '',
     database: 'spa',
     port: 3306
-}));
+}, 'single'));
 
-
+//Importamos el metodo para utilizar las rutas
+const customerRoutes = require('./routes/customer');
 //rutas
+app.use('/', customerRoutes);
+app.use('/admin', customerRoutes);
 
 
+
+
+
+
+// Configuracion de archivos estaticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+//Creamos el puerto, por si el sistema tiene uno.
+app.set('port', process.env.PORT || 3000);
 
 //Servidor escuchando
 app.listen(app.get('port'), ()=>{

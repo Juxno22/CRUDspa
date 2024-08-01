@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2e4c8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d5c29e;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.settings a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.settings a:hover {
+    text-decoration: underline;
+}
+
+.contenido{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;;
+}
+.agregar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+    width: 35%;
+    border-radius: 20px;
+    margin: 10px;
+}
+.agregar-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+label{
+    padding: 3px;
+    font-weight: bold;
+}
+input{
+    width: 80%;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+}
+.agregar-boton{
+    font-weight: bold;
+    width: 60%;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 15px;
+    border: 1px solid white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.agregar-boton:hover{
+    background-color: white;
+    border: 2px solid black;
+}
+
+.muestra{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 65%;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+}
