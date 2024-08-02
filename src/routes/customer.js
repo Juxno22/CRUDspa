@@ -17,8 +17,6 @@ router.post('/update/:idServicio', customerController.update);//Mostramos el ser
 
 //Rutas del CRUD de productos
 
-router.get('/producto', customerController.listP);//Mostramos los productos listados
-router.post('/addP', customerController.saveP);//Ruta para agregar un nuevo producto
 
 
 // Exportamos
