@@ -6,14 +6,19 @@ const router = express.Router();
 const customerController = require('../controllers/customerController');
 
 //Creamos las rutas que el servidor va poder iniciar
+
+//Rutas del CRUD de servicios
 router.get('/inicio', customerController.inicio);
-router.get('/', customerController.list);
+router.get('/', customerController.list);// mostramos los servicios enlistados
 router.post('/add', customerController.save);
 router.get('/delete/:idServicio', customerController.delete);//agregamos a la ruta el id del registro que queremos eliminar
 router.get('/update/:idServicio', customerController.edit);//agregamos a la ruta el id del registro que queremos actualizar
 router.post('/update/:idServicio', customerController.update);//Mostramos el servicio actualizado
 
+//Rutas del CRUD de productos
 
+router.get('/producto', customerController.listP);//Mostramos los productos listados
+router.post('/addP', customerController.saveP);//Ruta para agregar un nuevo producto
 
 
 // Exportamos

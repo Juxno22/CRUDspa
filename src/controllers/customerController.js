@@ -9,7 +9,6 @@ controller.inicio = (req, res)=>{
     res.render('index');
 };
 
-
 //Creamos el metodo para lstar los servicios
 controller.list = (req, res)=>{
     //Utilizamos el metodo para jalar la conexion creada en app.js
@@ -63,7 +62,6 @@ controller.update = (req, res)=>{
     });
 };
 
-
 //Creamos el metodo para elimnar un servicio
 controller.delete = (req, res)=>{
     const {idServicio} = req.params;
@@ -75,7 +73,33 @@ controller.delete = (req, res)=>{
     })
 };
 
+//Creamos el metodo para lstar los Productos
+controller.listP = (req, res)=>{
+    //Utilizamos el metodo para jalar la conexion creada en app.js
+    req.getConnection((err, conn)=>{
+        if(err) throw err;
+        // conn es la conexion que se obtuve a partir del metodo anterior
+        conn.query('select * from productos', (err, rows)=>{
+            if(err) throw err;
 
+            res.render('agregar', {
+                data: rows
+            });
+        });
+    })
+};
+
+//Creamos el metodo para agregar un nuevo Producto
+controller.saveP = (req, res)=>{
+    const data = req.body;
+    req.getConnection((err, conn)=>{
+        conn.query('insert into productos set ?', [data], (err, rows)=>{
+            console.log(rows);
+            res.redirect('/producto');
+        });
+
+    });
+};
 
 
 
