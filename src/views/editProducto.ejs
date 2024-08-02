@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zazil Ha Spa</title>
+    <link rel="stylesheet" href="/css/editP.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Zazil Ha Spa</h1>
+            <div class="settings">
+                <a href="#">Configuracion</a>
+                <a href="#">Ayuda</a>
+                <a href="/inicio">Inicio</a>
+            </div>
+        </header>
+        <div class="contenido">
+            <div class="agregar">
+                <form action="/updateproducto/<%= data.idProducto %>" method="post" class="agregar-form">
+                    <p style="font-weight: bold; font-size: 25px; margin: 8px">Editar Producto</p>
+                    <label for="idProducto">ID</label>
+                    <input type="text" name="idProducto" value="<%= data.idProducto %>">
+                    <label for="nombrePro">Producto</label>
+                    <input type="text" name="nombrePro" value="<%= data.nombrePro %>">
+                    <label for="precio">Precio</label>
+                    <input type="text" name="precio" value="<%= data.precio %>">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" name="descripcion" value="<%= data.descripcion %>">
+                    <label for="idUsuario">Usuario</label>
+                    <input type="text" name="idUsuario" value="<%= data.idUsuario %>">
+                    <label for="idCategoria">Categoria</label>
+                    <input type="text" name="idCategoria" value="<%= data.idCategoria %>">
+                    <button type="submit" class="agregar-boton">Guardar Producto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

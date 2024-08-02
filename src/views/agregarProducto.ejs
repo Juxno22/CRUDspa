@@ -18,8 +18,8 @@
         </header>
         <div class="contenido">
             <div class="agregar">
-                <form action="/addP" method="post" class="agregar-form">
-                    <p style="font-weight: bold; font-size: 25px; margin: 8px">Agregar Servicio</p>
+                <form action="/addproducto" method="post" class="agregar-form">
+                    <p style="font-weight: bold; font-size: 25px; margin: 8px">Agregar Producto</p>
                     <label for="idProducto">ID</label>
                     <input type="text" name="idProducto" placeholder="id">
                     <label for="nombrePro">Producto</label>
@@ -32,7 +32,7 @@
                     <input type="text" name="idUsuario" placeholder="Usuario">
                     <label for="idCategoria">Categoria</label>
                     <input type="text" name="idCategoria" placeholder="categoria">
-                    <button type="submit" class="agregar-boton">Guardar Servicio</button>
+                    <button type="submit" class="agregar-boton">Guardar Producto</button>
                 </form>
             </div>
             <div class="muestra">
@@ -61,10 +61,10 @@
                                     <td><%= data[i].idUsuario %></td>
                                     <td><%= data[i].idCategoria %></td>
                                     <td id="action">
-                                        <a href="/deletep/<%= data[i].idProducto %>" style="text-decoration: none;">
+                                        <a href="/deleteproducto/<%= data[i].idProducto %>" style="text-decoration: none;">
                                             <button id="action1">Eliminar</button>
                                         </a>
-                                        <a href="/updatep/<%= data[i].idProducto %>" style="text-decoration: none;">
+                                        <a href="/updateproducto/<%= data[i].idProducto %>" style="text-decoration: none;">
                                             <button id="action2">Editar</button>
                                         </a>
                                     </td>
