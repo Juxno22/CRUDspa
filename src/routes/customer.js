@@ -5,7 +5,6 @@ const router = express.Router();
 //Importamos el objeto creado en la carpeta controllers
 const customerController = require('../controllers/customerController');
 
-
 //Creamos las rutas que el servidor va poder iniciar
 
 //Rutas del CRUD de servicios

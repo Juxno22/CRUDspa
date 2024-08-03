@@ -89,6 +89,7 @@ controller.listP = (req, res)=>{
     });
 };
 
+
 //Creamos el metodo para agregar un nuevo producto
 controller.saveProducto = (req, res)=>{
     const data = req.body;
@@ -112,6 +113,7 @@ controller.editProducto = (req,res)=>{
         });
     });
 };
+
 
 controller.updateProducto = (req, res)=>{
     const {idProducto} = req.params;
